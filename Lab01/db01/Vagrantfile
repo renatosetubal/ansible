@@ -1,0 +1,22 @@
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/bookworm64"
+  config.vm.hostname="db01"  
+  config.vm.box_check_update = false
+
+  config.vm.network "forwarded_port", guest: 3306, host: 3306, host_ip: "192.168.0.81"
+  config.vm.network "forwarded_port", guest: 22, host: 22, host_ip: "192.168.0.81" 
+
+  config.vm.network "public_network", bridge: "Killer E2600 Gigabit Ethernet Controller", ip: "192.168.0.81"
+  # config.vm.network "public_network"
+  config.vm.synced_folder ".", "/vagrant", disabled: false
+  config.vm.provider "virtualbox" do |vb|
+       vb.memory = "2048"
+   end
+   config.vm.provision "shell", inline: <<-SHELL
+   #  apt install mariadb -y
+     apt install htop -y
+     apt install net-tools -y
+   SHELL
+end
+#vaconfig.vm.provision "shell", path:"provision.sh"

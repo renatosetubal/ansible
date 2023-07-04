@@ -1,0 +1,21 @@
+
+Vagrant.configure("2") do |config|
+
+   config.vm.box = "debian/bookworm64"
+   config.vm.hostname="Ap01"
+   #config.vm.box_check_update = false
+   config.vm.define "Ap01"
+   config.vm.network "public_network", bridge: "Killer E2600 Gigabit Ethernet Controller", ip: "192.168.0.82"
+   config.vm.network "forwarded_port", guest: 80, host: 80, host_ip: "192.168.0.82"   
+   config.vm.network "forwarded_port", guest: 22, host: 22, host_ip: "192.168.0.82"   
+   config.vm.synced_folder ".", "/vagrant", disabled: false
+   #config.vm.customize ["createhd", "--filename", "D:\VMs\Labs\db01.vdi", "--size", "50GB"]
+   config.vm.provider "virtualbox" do |vb|
+       vb.memory = "2048"
+    end
+    config.vm.provision "shell", inline: <<-SHELL
+      #apt install htop -y
+      apt install net-tools -y
+    SHELL
+ end
+ #vaconfig.vm.provision "shell", path:"provision.sh"
