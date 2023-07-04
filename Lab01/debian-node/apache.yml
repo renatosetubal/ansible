@@ -1,0 +1,16 @@
+- hosts: vm
+  become: yes
+  tasks:
+    - name: Instalar Apache
+      package: 
+        name: ['apache2','libapache2-mod-security2']
+        state: present
+    - name: Inicializando o Apache
+      service:
+        name: apache2
+        state: started
+        enabled: false
+    - name: Copiando site para os servidores
+      copy:
+        src: /vagrant/html/ 
+        dest: /var/www/html
