@@ -1,0 +1,19 @@
+- name: Configurar Banco de Dados
+  hosts: db01
+  user: vagrant
+  become: yes
+  var_files:
+    - vars/main.yml
+  vars:
+    - dbname: "db01"
+    - dbusername: "root"
+    - dbpassword: "root"
+  tasks:
+    - name: Configurar hosts lab ansible
+      lineinfile: line "{{item}}" path=/etc/hosts
+      with_items:
+        - 192.168.0.80 debian-node
+        - 192.168.0.81 ap01
+        - 192.168.0.82 bd01
+
+

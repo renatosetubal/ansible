@@ -8,3 +8,6 @@ cat  <<EOT >> /etc/hosts
     192.168.0.81 bd01
     192.168.0.82 ap01
 EOT
+cat  <<EOT >> /etc/profile
+    alias rm-chave="ssh-keygen -f '/root/.ssh/known_hosts' -R"
+EOT

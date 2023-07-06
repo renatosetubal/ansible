@@ -1,5 +1,5 @@
-- hosts: vm
-  become: yes
+- hosts: webserver
+  become: true
   tasks:
     - name: Instalar Apache
       package: 
