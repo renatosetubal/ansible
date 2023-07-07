@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
    #  apt install mariadb -y
       hostnamectl set-hostname DB01  
       echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCtPz8VFpCwBfXS25LOPKhO5ApMbUsc5GquZ5+h79FKMX6MLDAmlUfcxMqMYwLROJ+hv3Sl4JUM4dfwYEH+urinSCfmlrUdW06j9rtLoMu9Be0N8A4kAtFEwhTaSRikas6jNEiB0PGSNQCl4rGZ7L3PdjQwlbhmmi2CyQvWMbZhYtFEs7v6hsL8r3ox7YcA3yj0dpyTgnX35WK7R5kI1Z/myJTW6S2ReZQSmlqUKX4ysjWES8pShHzwkYZYiNR9Y6e4mdhn/tlrKUsdLUFOjHzWBRE4kgs65eWvmiLaCPZAWn3SibpCfNyu/3WoS5GqYXTiwlc3Afs6kKB8XkH/CuElqaztA6uE2AvtEV3WMF8GiZcFyv6psbZkyxI75SNpiypXgkFyCyLi6JA/MQnE2jSEAzJ3I3GmGFcjb28tWmhAYhV6+o8uNeuMcCdMXcDwPEKD3mw0C0EPYl0lSjUE9sDcTeGmWKyNMn4iMZggkgG2K252WQSsqvEruI/sHi7L18= root@debian-node" > /root/.ssh/authorized_keys
+	    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDVx9Pr9y3NwMQxoAt/XFYzOHe/56zLt0VTs+0stwpudwKz4UnshjvAXShaR1Uxn6S32+zNZs8Lgz2rq6h0t//zNTk7LKG6dgX0SVv1GbOzgXqrxHXodZylxbr2JW/oO6azDC4mUzv8rCMIK/w1sF5cwSo0WDgKHmcRDULwxkpg7P7Mxh70YJjhFBT56Kk0kseyQs/Ju+gCh06mirbIwhRCONGjFoiZrxwZjn+jesq/202G4sI/UW5DpKoQB/LQBSX4LUsO+uEvWJaLuVfF/eTo7SEkZd/crDSSQTP4mbwefC3JtBvPiw4kP1QdSdfrQOzht+/5DtcT6kHbidEp985ejnIJ9qydyGh6tyCSEicchZxcXZnm6G2DpPNVAZ921RkPn0LNNcR93il8jWBrHGLhlnQ+0tD3QRdaE83Q7J5GMwWCEKi61+czCgkjPqbzmGgGaSh6U/BX8FPyIsaCu1Ek3UawFOIqjy4o05fakJBlrtNY4Jd0Pjqf2QC4yxMAsV0= root@Debian-Node02" >> /root/.ssh/authorized_keys
    #apt install htop -y
      #apt install net-tools -y
    SHELL

@@ -24,7 +24,11 @@
         name: renato
         password: renato
         priv: "*.*:ALL"
-        host: "localhost"
+        host: 0.0.0.0
         state: present
         login_unix_socket: /var/run/mysqld/mysqld.sock
- 
+    - name: Cria banco de dados
+      mysql_db:
+        name: my-database 
+        state: present 
+          
