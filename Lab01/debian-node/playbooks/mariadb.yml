@@ -1,0 +1,13 @@
+- hosts: bd01
+  roles:
+    - role: mahdi22.mariadb_install
+      become: true
+      vars:
+        mariadb_version: "10.5"
+        deny_remote_connections: true
+        mysql_root_password: "root"
+        create_database: true
+        database: mydb
+        create_db_user: true
+        db_user_name: root
+        db_user_password: root
