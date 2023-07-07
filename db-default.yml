@@ -1,0 +1,31 @@
+- name: Instalar o MySQL
+  hosts: bd01
+  become: true
+  vars_files:
+  - vars/main.yml
+ 
+  tasks:
+    - name: Atualizar lista de pacotes
+      apt:
+        update_cache: yes
+      become: true
+    - name: Instalar o pacote MySQL Server
+      apt:
+        name: ["default-mysql-server","python3-mysqldb"]
+        state: present
+      become: true
+    - name: Inicializando o Mysql
+      service:
+        name: mysqld
+        state: started
+        enabled: true
+    - name: Criar usuário e conceder privilégios
+      mysql_user:
+        name: renato
+        password: renato
+        priv: "*.*:ALL"
+        host: "localhost"
+        state: present
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+  
+
