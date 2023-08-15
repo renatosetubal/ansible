@@ -16,3 +16,6 @@ mkdir /playbooks/handlers
 mkdir /playbooks/roles
 mkdir /playbooks/templates
 mkdir /playbooks/vars
+
+sudo ssh-keygen -t rsa -b 4096 -C "remiset@gmail.com" -N "" -f ~/.ssh/id_rsa 
+sudo cp /root/.ssh/id_rsa.pub /vagrant -v
