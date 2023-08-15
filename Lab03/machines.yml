@@ -1,0 +1,18 @@
+#Ansible node Controller
+- name: dnode
+  cpus: 1
+  memory: 2048
+  #ip: 192.168.0.201
+  box: debian/bookworm64
+  script: scripts/dnode.sh
+  network: public_network
+  bridge: Intel(R) Ethernet Connection (2) I219-LM
+
+- name: dweb01
+  cpus: 1
+  memory: 1048
+  #ip: 192.168.0.201
+  box: debian/bookworm64
+  script: scripts/dweb01.sh
+  network: public_network
+  bridge: Intel(R) Ethernet Connection (2) I219-LM
